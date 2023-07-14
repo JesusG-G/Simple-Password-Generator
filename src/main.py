@@ -23,8 +23,10 @@ def generate_password(length: int, symbols: bool, uppercase: bool) -> str :
         combination += string.punctuation
     if uppercase:
         combination += string.ascii_uppercase
+    
     combination_length = len(combination)
     new_password: str = ''
+    
     for _ in range(length):
         new_password += combination[secrets.randbelow(combination_length)]
 
